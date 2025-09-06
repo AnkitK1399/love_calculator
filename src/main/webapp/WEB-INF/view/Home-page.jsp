@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -9,19 +10,46 @@
 <body>
 <h1 align = "center">Form Fill Up</h1><br/>
 <div align="center">
-    <form action="process_info" method="get">
-        <label for="un">User Name: </label>
-        <input type="text" id="un" name="userName" />
+ <form:form action ="process_info" method ="get" modelAttribute="regForm">
+ 
+ <label>User :</label>
+ <form:input path="name"/>
+ <br/>
+ 
+ <label>userName :</label>
+ <form:input path="userName"/>
+ <br/>
+ 
+ <label>Password :</label>
+ <form:password path="password"/>
+ <br/>
+ 
+ <label>Country Name :</label>
+ <form:select path="country">
+ 	<form:option value ="IND" label = "INDIA"/>
+ 	<form:option value ="USA" label = "UNITED STATES"/>
+ 	<form:option value ="UK" label = "UNITED KINDOM"/>
+ 	<form:option value ="AUS" label = "AUSTRELIA"/>
+ 
+ </form:select>
+ 
+ <br/>
+ 
+ <label>Hobbies :</label>
+ Cricket <form:checkbox  path="hobbies" value ="cricket"/>
+ Travelling <form:checkbox  path="hobbies" value ="travelling"/>
+ Reading <form:checkbox path="hobbies" value ="reading"/>
+ 
+ <br/>
+ <label>Gender :</label>
+MALE <form:radiobutton path="gender" value="male"/>
+FEMALE <form:radiobutton path="gender" value="female"/>
 
-        <br><br>
+<br/>
 
-        <label for="cn">Crush Name: </label>
-        <input type="text" id="cn" name="crushName" />
-
-        <br><br>
-
-        <input type="submit" value="Calculate"/>
-    </form>
+<input type="submit" value="submit"/> 
+ 
+ </form:form>
 </div>
 </body>
 </html>
