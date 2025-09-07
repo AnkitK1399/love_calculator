@@ -1,65 +1,74 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
   <modelVersion>4.0.0</modelVersion>
   <groupId>seleniumMVC_JBC</groupId>
   <artifactId>love_calulator</artifactId>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
   <name>love_calulator Maven Webapp</name>
-  <url>http://maven.apache.org</url>
+
   <properties>
     <maven.compiler.source>21</maven.compiler.source>
     <maven.compiler.target>21</maven.compiler.target>
   </properties>
 
   <dependencies>
-  
-  <!-- https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/jstl-api -->
-<dependency>
-    <groupId>javax.servlet.jsp.jstl</groupId>
-    <artifactId>jstl-api</artifactId>
-    <version>1.2</version>
-</dependency>
-  
-  <!-- https://mvnrepository.com/artifact/javax.validation/validation-api -->
-<dependency>
-    <groupId>javax.validation</groupId>
-    <artifactId>validation-api</artifactId>
-    <version>2.0.1.Final</version>
-</dependency>
-  
-  
-  
+
     <!-- Spring Web MVC -->
     <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-webmvc</artifactId>
-        <version>7.0.0-M7</version>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
+      <version>6.1.3</version>
     </dependency>
 
-    <!-- Spring Context for component scanning -->
+    <!-- Jakarta Validation API (for @NotBlank, etc.) -->
     <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-context</artifactId>
-        <version>7.0.0-M7</version>
+      <groupId>jakarta.validation</groupId>
+      <artifactId>jakarta.validation-api</artifactId>
+      <version>3.0.2</version>
     </dependency>
 
-    <!-- JUnit for testing -->
+    <!-- Hibernate Validator (Jakarta Validation Implementation) -->
     <dependency>
-        <groupId>junit</groupId>
-        <artifactId>junit</artifactId>
-        <version>4.13.2</version>
-        <scope>test</scope>
+      <groupId>org.hibernate.validator</groupId>
+      <artifactId>hibernate-validator</artifactId>
+      <version>7.0.5.Final</version>
     </dependency>
 
-    <!-- Jakarta Servlet API for WAR deployment -->
+    <!-- EL support required by Hibernate Validator -->
     <dependency>
-        <groupId>jakarta.servlet</groupId>
-        <artifactId>jakarta.servlet-api</artifactId>
-        <version>6.1.0</version>
-        <scope>provided</scope>
+      <groupId>org.glassfish</groupId>
+      <artifactId>jakarta.el</artifactId>
+      <version>4.0.2</version>
     </dependency>
+
+    <!-- JSTL -->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>jstl</artifactId>
+      <version>1.2</version>
+    </dependency>
+
+    <!-- Jakarta Servlet API (Tomcat provides it at runtime) -->
+    <dependency>
+      <groupId>jakarta.servlet</groupId>
+      <artifactId>jakarta.servlet-api</artifactId>
+      <version>6.1.0</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <!-- JUnit -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.13.2</version>
+      <scope>test</scope>
+    </dependency>
+
   </dependencies>
+
   <build>
     <finalName>love_calulator</finalName>
   </build>

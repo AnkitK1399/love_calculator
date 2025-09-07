@@ -28,7 +28,7 @@ function validateUserName(){
 <h1 align = "center">Love Calculator</h1>
 <br/>
 <div align="center">
-<form:form action="calculateLove" method = "get" modelAttribute="crushForm" >
+<form:form action="calculateLove" method = "post" modelAttribute="crushForm" >
 <p>
 <label for ="un">Your Name : </label>
 <form:input path="username" id = "un"/>

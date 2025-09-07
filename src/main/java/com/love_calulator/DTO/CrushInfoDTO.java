@@ -1,7 +1,10 @@
 package com.love_calulator.DTO;
 
+import jakarta.validation.constraints.NotBlank;
+
 public class CrushInfoDTO {
 
+	@NotBlank(message = "*user name cannot be blank")
 	private String username;
 	private String crushname;
 	public String getUsername() {

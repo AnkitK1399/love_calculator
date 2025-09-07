@@ -1,6 +1,6 @@
 package com.love_calulator.handler;
 
-import javax.validation.Valid;
+
 
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.love_calulator.DTO.CrushInfoDTO;
 import com.love_calulator.DTO.UserInfoDTO;
+
+import jakarta.validation.Valid;
 
 @Controller
 public class MyController {
@@ -20,7 +22,9 @@ public class MyController {
 	
 	@RequestMapping("/calculateLove")
 	public String revealInfo(@Valid @ModelAttribute("crushForm") CrushInfoDTO crushInfo, BindingResult result) {
+		System.out.println("hello");
 		if(result.hasErrors()) {
+			System.out.println("hhh");
 			System.out.println("my form has error");
 		}
 		return "calculateLove";
